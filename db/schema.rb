@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_143857) do
+ActiveRecord::Schema.define(version: 2019_04_08_183459) do
+
+  create_table "educations", force: :cascade do |t|
+    t.string "nom"
+    t.string "ecole"
+    t.integer "date_debut"
+    t.integer "date_fin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "experiences", force: :cascade do |t|
     t.string "date_debut"
@@ -19,6 +28,34 @@ ActiveRecord::Schema.define(version: 2018_11_26_143857) do
     t.string "entreprise"
     t.string "lieu"
     t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "interests", force: :cascade do |t|
+    t.string "nom"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "nom"
+    t.string "niveau"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "nom"
+    t.string "description"
+    t.string "lien"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "nom"
+    t.integer "capacite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
